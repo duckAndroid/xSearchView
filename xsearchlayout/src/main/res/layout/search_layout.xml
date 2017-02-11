@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
               android:layout_height="match_parent">
     <ImageView
         android:id="@+id/search_back"
@@ -18,14 +19,18 @@
         android:layout_toEndOf="@id/search_back"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <EditText
+            android:visibility="visible"
+            android:singleLine="true"
             android:layout_centerVertical="true"
             android:drawablePadding="8dp"
             android:drawableStart="@drawable/search_hint_icon"
             android:hint="@string/app_name"
             android:id="@+id/et_search"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            tools:ignore="Deprecated"/>
         <ImageView
             android:id="@+id/search_close"
             android:padding="16dp"

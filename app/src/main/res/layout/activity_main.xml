@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -10,9 +11,66 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.pythoncat.xsearchview.MainActivity">
+    <!--
+      <attr name="root_background"/>
+        <attr name="back_background"/>
+        <attr name="search_body_background"/>
+        <attr name="et_background"/>
+        <attr name="close_background"/>
+    <attr name="hint_color"/>
+    <attr name="text_color"/>
 
+    <attr name="search_hint"/>
+    <attr name="search_text"/>
+    <attr name="back_padding_start"/>
+    <attr name="back_padding_end"/>
+    <attr name="back_padding_top"/>
+    <attr name="back_padding_bottom"/>
+    <attr name="back_padding"/>
+    <attr name="back_margin"/>
+    <attr name="back_margin_start"/>
+    <attr name="back_margin_end"/>
+    <attr name="back_margin_top"/>
+    <attr name="back_margin_bottom"/>
+    <attr name="back_src"/>
+    <attr name="back_visibility"/>
 
+    <attr name="close_src"/>
+
+    <attr name="close_visibility"/>
+    <attr name="close_padding_start"/>
+    <attr name="close_padding_end"/>
+    <attr name="close_padding_top"/>
+    <attr name="close_padding_bottom"/>
+    <attr name="close_padding"/>
+    <attr name="close_margin"/>
+    <attr name="close_margin_start"/>
+    <attr name="close_margin_end"/>
+    <attr name="close_margin_top"/>
+    <attr name="close_margin_bottom"/>
+    <attr name="hint_src"/>
+    <attr name="hint_padding"/>
+
+    <attr name="back_width"/>
+    <attr name="back_height"/>
+
+    <attr name="close_width"/>
+    <attr name="close_height"/>
+
+    <attr name="et_width"/>
+    <attr name="et_height"/>
+    <attr name="text_size"/>
+<attr name="et_margin_top"/>
+        <attr name="et_margin_bottom"/>
+    -->
     <com.pythoncat.xsearchlayout.SearchLayout
+        app:search_body_padding="8dp"
+        app:et_margin_top="1dp"
+        app:et_margin_bottom="1dp"
+        app:text_size="8sp"
+        app:hint_padding="20dp"
+        app:root_background="@color/gray"
+        app:hint_color="@color/colorAccent"
         android:id="@+id/x_search_view"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"/>

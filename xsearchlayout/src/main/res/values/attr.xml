@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- background color/drawable -->
+    <attr name="root_background" format="reference"/>
+    <attr name="back_background" format="reference"/>
+    <attr name="search_body_background" format="reference"/>
+    <attr name="et_background" format="reference"/>
+    <attr name="close_background" format="reference"/>
+    <!-- text color -->
+    <attr name="hint_color" format="color|reference"/>
+    <attr name="text_color" format="color|reference"/>
+    <attr name="text_size" format="dimension|reference"/>
+    <!-- text str -->
+    <attr name="search_hint" format="string|reference"/>
+    <attr name="search_text" format="string|reference"/>
+    <!-- back menu padding and margin -->
+    <attr name="back_padding_start" format="dimension|reference|float"/>
+    <attr name="back_padding_end" format="dimension|reference|float"/>
+    <attr name="back_padding_top" format="dimension|reference|float"/>
+    <attr name="back_padding_bottom" format="dimension|reference|float"/>
+    <attr name="back_padding" format="dimension|reference|float"/>
+    <attr name="back_margin" format="dimension|reference|float"/>
+    <attr name="back_margin_start" format="dimension|reference|float"/>
+    <attr name="back_margin_end" format="dimension|reference|float"/>
+    <attr name="back_margin_top" format="dimension|reference|float"/>
+    <attr name="back_margin_bottom" format="dimension|reference|float"/>
+    <!-- back icon src -->
+    <attr name="back_src" format="reference"/>
+    <attr name="back_visibility" format="enum">
+        <enum name="visible" value="0x00000000"/>
+        <enum name="invisible" value="0x00000004"/>
+        <enum name="gone" value="0x00000008"/>
+    </attr>
+    <!-- close icon src -->
+    <attr name="close_src" format="reference"/>
+
+    <attr name="close_visibility" format="enum">
+        <enum name="visible" value="0x00000000"/>
+        <enum name="invisible" value="0x00000004"/>
+        <enum name="gone" value="0x00000008"/>
+    </attr>
+    <!-- close menu padding and margin -->
+    <attr name="close_padding_start" format="dimension|reference|float"/>
+    <attr name="close_padding_end" format="dimension|reference|float"/>
+    <attr name="close_padding_top" format="dimension|reference|float"/>
+    <attr name="close_padding_bottom" format="dimension|reference|float"/>
+    <attr name="close_padding" format="dimension|reference|float"/>
+    <attr name="close_margin" format="dimension|reference|float"/>
+    <attr name="close_margin_start" format="dimension|reference|float"/>
+    <attr name="close_margin_end" format="dimension|reference|float"/>
+    <attr name="close_margin_top" format="dimension|reference|float"/>
+    <attr name="close_margin_bottom" format="dimension|reference|float"/>
+    <!-- search hint icon -->
+    <attr name="hint_src" format="reference"/>
+    <!-- search hint icon padding -->
+    <attr name="hint_padding" format="dimension|reference|float"/>
+
+    <attr name="back_width" format="dimension|reference"/>
+    <attr name="back_height" format="dimension|reference"/>
+
+    <attr name="close_width" format="dimension|reference"/>
+    <attr name="close_height" format="dimension|reference"/>
+
+    <attr name="et_width" format="dimension|reference"/>
+    <attr name="et_height" format="dimension|reference"/>
+
+    <attr name="search_body_padding" format="dimension|reference"/>
+    <attr name="search_body_padding_start" format="dimension|reference"/>
+    <attr name="search_body_padding_end" format="dimension|reference"/>
+    <attr name="search_body_padding_top" format="dimension|reference"/>
+    <attr name="search_body_padding_bottom" format="dimension|reference"/>
+
+    <attr name="search_body_margin" format="dimension|reference"/>
+    <attr name="search_body_margin_start" format="dimension|reference"/>
+    <attr name="search_body_margin_end" format="dimension|reference"/>
+    <attr name="search_body_margin_top" format="dimension|reference"/>
+    <attr name="search_body_margin_bottom" format="dimension|reference"/>
+
+    <attr name="et_padding" format="dimension|reference"/>
+    <attr name="et_padding_start" format="dimension|reference"/>
+    <attr name="et_padding_end" format="dimension|reference"/>
+    <attr name="et_padding_top" format="dimension|reference"/>
+    <attr name="et_padding_bottom" format="dimension|reference"/>
+
+    <attr name="et_margin" format="dimension|reference"/>
+    <attr name="et_margin_start" format="dimension|reference"/>
+    <attr name="et_margin_end" format="dimension|reference"/>
+    <attr name="et_margin_top" format="dimension|reference"/>
+    <attr name="et_margin_bottom" format="dimension|reference"/>
+
+    <declare-styleable name="X_SearchView">
+        <!-- background color/drawable -->
+        <attr name="root_background"/>
+        <attr name="back_background"/>
+        <attr name="search_body_background"/>
+        <attr name="et_background"/>
+        <attr name="close_background"/>
+        <!-- text color -->
+        <attr name="hint_color"/>
+        <attr name="text_color"/>
+
+        <!-- text str -->
+        <attr name="search_hint"/>
+        <attr name="search_text"/>
+        <!-- back menu padding and margin -->
+        <attr name="back_padding_start"/>
+        <attr name="back_padding_end"/>
+        <attr name="back_padding_top"/>
+        <attr name="back_padding_bottom"/>
+        <attr name="back_padding"/>
+        <attr name="back_margin"/>
+        <attr name="back_margin_start"/>
+        <attr name="back_margin_end"/>
+        <attr name="back_margin_top"/>
+        <attr name="back_margin_bottom"/>
+        <!-- back icon src -->
+        <attr name="back_src"/>
+        <attr name="back_visibility"/>
+
+        <!-- close icon src -->
+        <attr name="close_src"/>
+
+        <attr name="close_visibility"/>
+        <!-- close menu padding and margin -->
+        <attr name="close_padding_start"/>
+        <attr name="close_padding_end"/>
+        <attr name="close_padding_top"/>
+        <attr name="close_padding_bottom"/>
+        <attr name="close_padding"/>
+        <attr name="close_margin"/>
+        <attr name="close_margin_start"/>
+        <attr name="close_margin_end"/>
+        <attr name="close_margin_top"/>
+        <attr name="close_margin_bottom"/>
+        <!-- search hint icon -->
+        <attr name="hint_src"/>
+        <!-- search hint icon padding -->
+        <attr name="hint_padding"/>
+        <!--width and height-->
+
+        <attr name="back_width"/>
+        <attr name="back_height"/>
+
+        <attr name="close_width"/>
+        <attr name="close_height"/>
+
+        <attr name="et_width"/>
+        <attr name="et_height"/>
+        <attr name="text_size"/>
+
+
+        <attr name="search_body_padding"/>
+        <attr name="search_body_padding_start"/>
+        <attr name="search_body_padding_end"/>
+        <attr name="search_body_padding_top"/>
+        <attr name="search_body_padding_bottom"/>
+
+        <attr name="search_body_margin"/>
+        <attr name="search_body_margin_start"/>
+        <attr name="search_body_margin_end"/>
+        <attr name="search_body_margin_top"/>
+        <attr name="search_body_margin_bottom"/>
+
+        <attr name="et_padding"/>
+        <attr name="et_padding_start"/>
+        <attr name="et_padding_end"/>
+        <attr name="et_padding_top"/>
+        <attr name="et_padding_bottom"/>
+
+        <attr name="et_margin"/>
+        <attr name="et_margin_start"/>
+        <attr name="et_margin_end"/>
+        <attr name="et_margin_top"/>
+        <attr name="et_margin_bottom"/>
+
+
+    </declare-styleable>
+</resources>
