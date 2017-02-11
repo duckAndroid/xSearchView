@@ -5,6 +5,8 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -160,7 +162,7 @@ public class SearchLayout extends FrameLayout {
         hintColor = array.getColor(R.styleable.X_SearchView_hint_color, Color.BLACK);
         textRes = array.getResourceId(R.styleable.X_SearchView_search_text, R.string.empty);
         hintRes = array.getResourceId(R.styleable.X_SearchView_search_hint, R.string.app_name);
-        backBg = array.getResourceId(R.styleable.X_SearchView_back_background, R.color.colorAccent);
+        backBg = array.getResourceId(R.styleable.X_SearchView_back_background, R.color.transparent);
         closeBg = array.getResourceId(R.styleable.X_SearchView_close_background, R.color.transparent);
         rootBg = array.getResourceId(R.styleable.X_SearchView_root_background, R.color.transparent);
         searchBodyBg = array.getResourceId(R.styleable.X_SearchView_search_body_background,
@@ -192,7 +194,7 @@ public class SearchLayout extends FrameLayout {
             et.setPadding(leastZero(etPaddingStart), leastZero(etPaddingTop),
                     leastZero(etPaddingEnd), leastZero(etPaddingBottom));
         }
-        final ViewGroup.LayoutParams params3= et.getLayoutParams();
+        final ViewGroup.LayoutParams params3 = et.getLayoutParams();
         if (params3 instanceof RelativeLayout.LayoutParams) {
             // todo ->
             RelativeLayout.LayoutParams rp = (RelativeLayout.LayoutParams) params3;
@@ -211,7 +213,7 @@ public class SearchLayout extends FrameLayout {
             searchBody.setPadding(leastZero(searchBodyPaddingStart), leastZero(searchBodyPaddingTop),
                     leastZero(searchBodyPaddingEnd), leastZero(searchBodyPaddingBottom));
         }
-        final ViewGroup.LayoutParams params4= searchBody.getLayoutParams();
+        final ViewGroup.LayoutParams params4 = searchBody.getLayoutParams();
         if (params4 instanceof RelativeLayout.LayoutParams) {
             // todo ->
             RelativeLayout.LayoutParams rp = (RelativeLayout.LayoutParams) params4;
@@ -369,5 +371,72 @@ public class SearchLayout extends FrameLayout {
             //view.setX(x);
             view.requestLayout();
         }
+    }
+
+    @Override
+    protected void onFinishInflate() {
+        super.onFinishInflate();
+        closeIcon.setVisibility(GONE);
+        et.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s,
+                                          int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (s.length() == 0) {
+                    closeIcon.setVisibility(INVISIBLE);
+                } else {
+                    closeIcon.setVisibility(VISIBLE);
+                }
+                if (onQuery != null) {
+                    onQuery.onQuery(s);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+        backIcon.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                backClickListener.onClick(v);
+            }
+        });
+        if (closeClickListener == null) {
+            closeIcon.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    et.setText("");
+                }
+            });
+        } else {
+            closeIcon.setOnClickListener(closeClickListener);
+        }
+    }
+
+    public void clearText(){
+        et.setText("");
+    }
+    public void setBackClickListener(OnClickListener backClickListener) {
+        this.backClickListener = backClickListener;
+    }
+
+    public void setCloseClickListener(OnClickListener closeClickListener) {
+        this.closeClickListener = closeClickListener;
+    }
+
+    public interface OnQuery {
+        void onQuery(CharSequence sequence);
+    }
+
+    private OnQuery onQuery;
+    private OnClickListener backClickListener;
+    private OnClickListener closeClickListener;
+
+    public void setOnQuery(OnQuery query) {
+        this.onQuery = query;
     }
 }

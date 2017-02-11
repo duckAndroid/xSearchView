@@ -64,13 +64,6 @@
         <attr name="et_margin_bottom"/>
     -->
     <com.pythoncat.xsearchlayout.SearchLayout
-        app:search_body_padding="8dp"
-        app:et_margin_top="1dp"
-        app:et_margin_bottom="1dp"
-        app:text_size="8sp"
-        app:hint_padding="20dp"
-        app:root_background="@color/gray"
-        app:hint_color="@color/colorAccent"
         android:id="@+id/x_search_view"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"/>

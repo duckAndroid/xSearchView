@@ -13,18 +13,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        SearchLayout sl = (SearchLayout) findViewById(R.id.x_search_view);
-        sl.getBackIcon().setImageResource(R.mipmap.ic_launcher);
-        sl.getBackIcon().setOnClickListener(new View.OnClickListener() {
+        final SearchLayout sl = (SearchLayout) findViewById(R.id.x_search_view);
+        sl.setOnQuery(new SearchLayout.OnQuery() {
             @Override
-            public void onClick(View v) {
-                ToastHelper.showShort("BACK...");
+            public void onQuery(CharSequence sequence) {
+                ToastHelper.showShort(sequence);
             }
         });
-        sl.getCloseIcon().setOnClickListener(new View.OnClickListener() {
+        sl.setBackClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               ToastHelper.showShort("CLOSE...");
+                sl.clearText();
+                ToastHelper.showShort("back .....");
+//                finish();
             }
         });
     }
